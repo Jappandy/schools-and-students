@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+**school-registration.html**
+
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.name|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.school_id_num|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.principal|as_crispy_field }}
+    {{ form.location|as_crispy_field }}
+    <button type="submit" class="btn btn-success">Save person</button>
+  </form>
+{% endblock %}
